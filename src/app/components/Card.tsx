@@ -24,7 +24,7 @@ const Card = ({ project }: Props) => {
                </p>
            </div>
            <div className="px-6 pt-4 pb-2">
-               <a href={project.url} target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-800 font-semibold">
+               <a href={project.svn_url} target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-800 font-semibold">
                    Lihat Proyek
                </a>
            </div>

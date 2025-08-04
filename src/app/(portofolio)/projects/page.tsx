@@ -2,6 +2,7 @@ import Card from "@/app/components/Card";
 import { Project,Anime } from "@/app/api/projects/route";
 import List from "@/app/components/List";
 import AnimeCard from "@/app/components/AnimeCard";
+import ProjectSummaryCard from "@/app/components/ProjectSummaryCard";
 
 /**
  * @description Halaman ini bertindak sebagai "Arsitek".
@@ -12,9 +13,14 @@ import AnimeCard from "@/app/components/AnimeCard";
  */
 
 const getProjects = async (): Promise<Project[]> => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/projects`, {
-    cache: "no-store",
-  });
+    const GITHUB_PAT = process.env.GITHUB_PAT;
+
+    const res = await fetch('https://api.github.com/user/repos', {
+        headers: {
+            Authorization: `token ${GITHUB_PAT}`,
+        },
+        cache: 'no-cache',
+    });
   if (!res.ok) {
     throw new Error("Failed to fetch data");
   }
@@ -35,7 +41,7 @@ const ProjectsPage = async () => {
   // 1. Arsitek mendapatkan "bahan baku" (data proyek).
   const projects = await getProjects();
 const animefetch = await getAnime();
-    console.log(animefetch)
+    console.log(projects)
   return (
     <main className={"flex min-h-screen flex-col items-center p-24"}>
       <h1 className="text-4xl font-bold">Proyek Saya</h1>
@@ -58,7 +64,12 @@ const animefetch = await getAnime();
         />
       </div>
         <>
-            <List<Anime> items={animefetch} renderItem={item => <AnimeCard project={item}/>} getKey={item => item.mal_id}/>
+            <List<Project>
+                items={projects}
+                renderItem={item => <ProjectSummaryCard project={item}/>}
+                getKey={item => item.id}
+                />
+
         </>
     </main>
   );

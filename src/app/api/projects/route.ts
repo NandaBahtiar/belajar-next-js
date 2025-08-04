@@ -4,7 +4,7 @@ export interface Project {
     id:number;
     name:string;
     description:string;
-    url:string;
+    svn_url:string;
 }
 export interface Anime{
     mal_id:number;

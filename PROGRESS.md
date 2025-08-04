@@ -75,10 +75,25 @@ This file tracks my progress through the Next.js project-based learning curricul
 
 ---
 
+## Chapter 6: Advanced TypeScript Patterns dalam Next.js
+- **Status:** ✅ Completed
+- **Key Skills Mastered:**
+    - [x] Memahami masalah dengan komponen yang tidak fleksibel.
+    - [x] Membuat komponen React generik (`<T>`) yang type-safe (`List.tsx`).
+    - [x] Menggunakan komponen generik untuk merender daftar data yang kompleks.
+    - [x] Mendelegasikan render logic menggunakan render props (`renderItem`).
+    - [x] Memahami perbedaan antara Server dan Client Components dan aturan passing props (fungsi).
+    - [x] Memperbaiki error terkait Server/Client Component boundary.
+    - [x] Memahami konsep DRY (Don't Repeat Yourself) untuk tipe data.
+    - [x] Menggunakan Utility Types (`Pick`, `Omit`, `Partial`) untuk membuat tipe baru dari yang sudah ada.
+    - [x] Menerapkan `Pick` dalam skenario praktis untuk membuat komponen dengan props yang lebih spesifik.
+
+---
+
 ## Upcoming Chapters
 
-- [ ] **Chapter 6: Advanced TypeScript Patterns dalam Next.js**
 - [ ] **Chapter 7: Authentication & Security (Type-Safe)**
+- [ ] **Chapter 8: Database Integration dengan TypeScript**
 - [ ] **Chapter 8: Database Integration dengan TypeScript**
 - [ ] **Chapter 9: Performance & Optimization di Next.js 15.4.4**
 - [ ] **Chapter 10: Deployment & Production Ready TypeScript**
